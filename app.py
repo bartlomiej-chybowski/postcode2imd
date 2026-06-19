@@ -294,7 +294,8 @@ st.markdown(
     'converter</h1>',
     unsafe_allow_html=True)
 
-@st.cache_data
+# @st.cache_data(max_entries=1)
+@st.cache_resource(max_entries=1)
 def load_data():
     try:
         return pd.read_parquet('data/concatenated.parquet')
